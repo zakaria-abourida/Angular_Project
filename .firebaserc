@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "testsocial-590c2": {
+      "hosting": {
+        "pd-free-angularcli": [
+          "testsocial-590c2"
+        ]
+      }
+    }
+  }
+}
