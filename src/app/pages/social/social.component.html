@@ -9,6 +9,10 @@
     </div>
   
     <div *ngIf="isLoggedin === true">
+
+        <div class="text-center">
+            <img [src]="socialUser.photoUrl" class="rounded" alt="..." >
+          </div>
       <div class="form-group"> 
         <label>First Name</label>
         <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
@@ -21,6 +25,10 @@
         <label>Email</label>
         <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
       </div>
+      <div class="form-group">
+        <label>id</label>
+        <input type="text" class="form-control" [value]="socialUser.id" id="email" readonly>
+      </div>   
   
       <button type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
     </div>
