@@ -93,7 +93,7 @@ import { GoogleLoginProvider } from 'angularx-social-login';
           {
             id: FacebookLoginProvider.PROVIDER_ID,
             provider: new FacebookLoginProvider(
-              'Replace-With-Facebook-App-ID'
+              '1144821786324050'
             )
           }
         ]

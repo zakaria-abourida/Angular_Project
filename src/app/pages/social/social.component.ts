@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SocialAuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
+import { FacebookLoginProvider,SocialAuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-social',
@@ -50,11 +50,16 @@ export class SocialComponent implements OnInit {
       this.isLoggedin = (user != null);
       console.log(this.socialUser);
     });
+
+    
   }
 
 
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).catch((error)=> console.log(error) );
+  }
+  facebookSignin(): void {
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).catch((error)=> console.log(error));
   }
 
   logOut(): void {

@@ -4,11 +4,12 @@
     <div *ngIf="isLoggedin === false">
       <div>
         <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+        <button type="button" (click)="facebookSignin()" class="btn btn-primary">Login with Facebook</button>
       </div>
     </div>
   
     <div *ngIf="isLoggedin === true">
-      <div class="form-group">
+      <div class="form-group"> 
         <label>First Name</label>
         <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
       </div>
