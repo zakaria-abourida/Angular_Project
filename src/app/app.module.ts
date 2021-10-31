@@ -30,7 +30,10 @@ import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { FacebookLoginProvider,SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 
 
 
@@ -66,12 +69,36 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
       AngularFirestoreModule ,
       AngularFireDatabaseModule,
       AngularFireStorageModule,
+  
+      ReactiveFormsModule,
+      SocialLoginModule
     
    
 
   ],
   providers: [
     // ScreenTrackingService,UserTrackingService
+
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '643293714407-vrqbgl51ra6adckb569clr9bh0qgpt0p.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider(
+              'Replace-With-Facebook-App-ID'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    } 
   
   ],
   bootstrap: [AppComponent]
